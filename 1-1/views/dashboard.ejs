@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="../stylesheets/dashboard.css">
+    <title>dashboard</title>
+  </head>
+  <body id="<%= user.username %>">
+    <p>hello <%= user.username %>!</p>
+
+    <div>
+      <div id="user-crud">
+        <form id="read-user">
+          <caption>user info</caption>
+          <label><%= user.name %></label>
+          <label><%= user.username %></label>
+          <label><%= user.email %></label>
+        </form>
+
+        <form id="update-user">
+          <input type="text" id="name-update" placeholder="name">
+          <input type="email" id="email-update"  placeholder="email">
+          <input type="password" id="password-update" placeholder="password">
+          <input type="submit" value="update account">
+        </form>
+
+        <form id="delete-user">
+          <input type="submit" value="delete account">
+        </form>
+
+        <form action="/auth/logout" method="get">
+          <input type="submit" value="logout">
+        </form>
+      </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="../javascripts/functions.js"></script>
+  </body>
+</html>

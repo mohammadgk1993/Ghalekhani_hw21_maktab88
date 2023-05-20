@@ -10,7 +10,7 @@ export class TicketService {
     constructor(@InjectModel('Ticket') private TicketModel: Model<TicketDocument>) {}
 
     public async findAllTickets(): Promise<TicketDocument[]> {
-        return this.TicketModel.find({});
+        return this.TicketModel.find({}).populate("createdBy",{_id:0,__v:0,createdAt:0,updatedAt:0});
     }
 
     public async createTicket(ticketInfo): Promise<TicketDocument> {
@@ -18,7 +18,7 @@ export class TicketService {
     }
 
     public async findTicketById(_id: string): Promise<TicketDocument> {
-        return await this.TicketModel.findById(_id);
+        return await this.TicketModel.findById(_id).populate("createdBy");
     }
 
     public async updateTicket(_id: string, updateInfo): Promise<TicketDocument> {

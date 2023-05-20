@@ -1,0 +1,28 @@
+* {
+    font-size: 18px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+}
+
+body {
+    background: linear-gradient(aqua, blue, purple);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    border: none;
+    border-radius: 25px;
+    background-color: white;
+    padding: 3%;
+}
+
+form * {
+    border: rgb(172, 172, 172) 2px solid;
+    border-radius: 25px;
+    margin: 2%;
+    padding: 3%;
+}

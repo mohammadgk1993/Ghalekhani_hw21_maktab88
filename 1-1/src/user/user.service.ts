@@ -3,6 +3,7 @@ import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { UserDocument } from './schemas/user.schema';
 import { CreateUserDto,UpdateUserDto } from './dto/user.dto';
+import { Request } from 'express';
 
 
 @Injectable()
@@ -36,10 +37,10 @@ export class UserService {
   }
 
   public async updateUser(username: string,body: UpdateUserDto): Promise<any> {
-    return this.UserModel.findOneAndUpdate({username},body);
-  }
+    await this.UserModel.findOneAndUpdate({username},body)
+  } 
 
   public async deleteUser(username: string): Promise<any> {
-    return this.UserModel.deleteOne({ username });
+    await this.UserModel.deleteOne({ username });
   }
 }

@@ -5,7 +5,9 @@ export type ReplyDocument = HydratedDocument<Reply>;
 
 @Schema()
 export class Reply {
-  @Prop()
+  @Prop({
+    required: true
+  })
   description: string;
 
   @Prop({

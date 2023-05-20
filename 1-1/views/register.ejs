@@ -1,0 +1,15 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="../stylesheets/style.css">
+    <title><%= title %></title>
+  </head>
+  <body>
+    <form action="/auth/register" method="post">
+        <input type="text" name="name" placeholder="name">
+        <input type="text" name="username" placeholder="username">
+        <input type="password" name="password" placeholder="password">
+        <input type="email" name="email" placeholder="email">
+        <input type="submit" value="Register">
+    </form>
+  </body>
+</html>
